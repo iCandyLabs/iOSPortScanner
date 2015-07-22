@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1FCF7E96218A6E05F3A972F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB075BD885C998482FA53A4 /* libPods.a */; };
-		9F0FACEA1B5DE79A00F7940C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FACE71B5DE79A00F7940C /* GCDAsyncSocket.m */; };
-		9F0FACEB1B5DE79A00F7940C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FACE91B5DE79A00F7940C /* GCDAsyncUdpSocket.m */; };
 		9F2FC0CD1B60286300658006 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC0CA1B60286300658006 /* NotificationView.swift */; };
 		9F2FC0CE1B60286300658006 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC0CB1B60286300658006 /* ResultCell.swift */; };
 		9F2FC0CF1B60286300658006 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2FC0CC1B60286300658006 /* ResultCell.xib */; };
 		9F2FC0D11B602BF700658006 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC0D01B602BF700658006 /* ScanningViewController.swift */; };
+		9F2FC0D61B60320D00658006 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC0D31B60320D00658006 /* GCDAsyncSocket.m */; };
+		9F2FC0D71B60320D00658006 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FC0D51B60320D00658006 /* GCDAsyncUdpSocket.m */; };
 		9F3471461B5EF67D001F56FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3471441B5EF67D001F56FD /* LaunchScreen.xib */; };
 		9F3471741B5F3D81001F56FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3471731B5F3D81001F56FD /* Images.xcassets */; };
 		9FE813991B5D99BC00EDDAE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE813981B5D99BC00EDDAE6 /* AppDelegate.swift */; };
@@ -37,15 +37,15 @@
 
 /* Begin PBXFileReference section */
 		037075886A7FEB7CE69BAA2B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9F0FACE61B5DE79A00F7940C /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = "../../../../Downloads/CocoaAsyncSocket-master/GCD/GCDAsyncSocket.h"; sourceTree = "<group>"; };
-		9F0FACE71B5DE79A00F7940C /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = "../../../../Downloads/CocoaAsyncSocket-master/GCD/GCDAsyncSocket.m"; sourceTree = "<group>"; };
-		9F0FACE81B5DE79A00F7940C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = "../../../../Downloads/CocoaAsyncSocket-master/GCD/GCDAsyncUdpSocket.h"; sourceTree = "<group>"; };
-		9F0FACE91B5DE79A00F7940C /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = "../../../../Downloads/CocoaAsyncSocket-master/GCD/GCDAsyncUdpSocket.m"; sourceTree = "<group>"; };
 		9F0FACEC1B5DF6B300F7940C /* netstat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = netstat.h; sourceTree = "<group>"; };
 		9F2FC0CA1B60286300658006 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9F2FC0CB1B60286300658006 /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		9F2FC0CC1B60286300658006 /* ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
 		9F2FC0D01B602BF700658006 /* ScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
+		9F2FC0D21B60320D00658006 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		9F2FC0D31B60320D00658006 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		9F2FC0D41B60320D00658006 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		9F2FC0D51B60320D00658006 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		9F3471451B5EF67D001F56FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9F3471731B5F3D81001F56FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9FE813931B5D99BC00EDDAE6 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,10 +168,10 @@
 		9FE813E31B5DD58E00EDDAE6 /* SocketImplementation */ = {
 			isa = PBXGroup;
 			children = (
-				9F0FACE61B5DE79A00F7940C /* GCDAsyncSocket.h */,
-				9F0FACE71B5DE79A00F7940C /* GCDAsyncSocket.m */,
-				9F0FACE81B5DE79A00F7940C /* GCDAsyncUdpSocket.h */,
-				9F0FACE91B5DE79A00F7940C /* GCDAsyncUdpSocket.m */,
+				9F2FC0D21B60320D00658006 /* GCDAsyncSocket.h */,
+				9F2FC0D31B60320D00658006 /* GCDAsyncSocket.m */,
+				9F2FC0D41B60320D00658006 /* GCDAsyncUdpSocket.h */,
+				9F2FC0D51B60320D00658006 /* GCDAsyncUdpSocket.m */,
 				9F0FACEC1B5DF6B300F7940C /* netstat.h */,
 			);
 			path = SocketImplementation;
@@ -331,15 +331,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F0FACEA1B5DE79A00F7940C /* GCDAsyncSocket.m in Sources */,
 				9F2FC0D11B602BF700658006 /* ScanningViewController.swift in Sources */,
 				9FE8139B1B5D99BC00EDDAE6 /* ViewController.swift in Sources */,
 				9FE813B91B5D99F100EDDAE6 /* IPResponse.swift in Sources */,
+				9F2FC0D71B60320D00658006 /* GCDAsyncUdpSocket.m in Sources */,
 				9FE813991B5D99BC00EDDAE6 /* AppDelegate.swift in Sources */,
 				9FE813F01B5DD5C200EDDAE6 /* NetworkFunctions.swift in Sources */,
-				9F0FACEB1B5DE79A00F7940C /* GCDAsyncUdpSocket.m in Sources */,
 				9FE813EF1B5DD5C200EDDAE6 /* Functions.swift in Sources */,
 				9F2FC0CE1B60286300658006 /* ResultCell.swift in Sources */,
+				9F2FC0D61B60320D00658006 /* GCDAsyncSocket.m in Sources */,
 				9F2FC0CD1B60286300658006 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,6 +39,7 @@ class ScanningViewController: UIViewController, UITableViewDataSource, UITableVi
         self.view.bringSubviewToFront(self.cancelButton)
         self.view.bringSubviewToFront(self.topLabel)
         self.view.bringSubviewToFront(self.resultTable)
+        cancelButton.hidden = true
         cancelButton.layer.cornerRadius  =  5
         cancelButton.layer.borderWidth   =  3
         cancelButton.layer.borderColor   =  UIColor(red: 191/255, green: 76/255, blue: 86/255, alpha: 1).CGColor
@@ -108,6 +109,7 @@ class ScanningViewController: UIViewController, UITableViewDataSource, UITableVi
             // --- Update UI ---
             dispatch_sync(dispatch_get_main_queue(), {
                 self.topLabel.text = "Done!"
+                self.cancelButton.hidden = false
                 self.cancelButton.setTitle("Home", forState: .Normal)
                 self.cancelButton.layer.borderColor   =  UIColor(red: 66/255, green: 166/255, blue: 75/255, alpha: 1).CGColor
                 self.cancelButton.setTitleColor(UIColor(red: 66/255, green: 166/255, blue: 75/255, alpha: 1), forState: UIControlState.Normal)
@@ -130,39 +132,39 @@ class ScanningViewController: UIViewController, UITableViewDataSource, UITableVi
     func listenForResults() {
         let portHasBeenFound = "PortFound"
         NSNotificationCenter.defaultCenter().addObserverForName( portHasBeenFound, object: nil, queue: NSOperationQueue.mainQueue(),
-        usingBlock: { notification in
-            let message = notification.object as! [String]
-            let host = message[0]
-            let port = message[1]
-            if (host == self.localHost)
-            {
-                if let index = find(self.localOpenPorts, port)
+            usingBlock: { notification in
+                let message = notification.object as! [String]
+                let host = message[0]
+                let port = message[1]
+                if (host == self.localHost)
                 {
-                    NSLog("\(port) was already in locaOpenPorts array")
+                    if let index = find(self.localOpenPorts, port)
+                    {
+                        NSLog("\(port) was already in locaOpenPorts array")
+                    }
+                    else
+                    {
+                        self.localOpenPorts.append(port)
+                        self.resultTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+                    }
                 }
-                else
+                else if (host == self.publicIP)
                 {
-                    self.localOpenPorts.append(port)
-                    self.resultTable.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+                    println("*** wifi ***")
+                    if let index = find(self.wifiOpenPorts, port)
+                    {
+                        NSLog("\(port) was already in wifiOpenPorts array")
+                    }
+                    else
+                    {
+                        self.wifiOpenPorts.append(port)
+                        self.resultTable.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
+                    }
                 }
-            }
-            else if (host == self.publicIP)
-            {
-                println("*** wifi ***")
-                if let index = find(self.wifiOpenPorts, port)
-                {
-                    NSLog("\(port) was already in wifiOpenPorts array")
-                }
-                else
-                {
-                    self.wifiOpenPorts.append(port)
-                    self.resultTable.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
-                }
-            }
-            
+                
         })
     }
-
+    
     func updateProgress() {
         self.progressCounter = self.progressCounter + 1
         var progress: Int = Int(floor(Double(self.progressCounter)/Double(self.maxOperation) * 100))
@@ -248,7 +250,7 @@ class ScanningViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         return cell
     }
-
+    
     // MARK: - Segue's functions
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Cancel"
@@ -260,9 +262,9 @@ class ScanningViewController: UIViewController, UITableViewDataSource, UITableVi
     func socket(socket : GCDAsyncSocket, didReadData data:NSData, withTag tag:UInt16)
     {
         var response = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println("Received Response")
+        println("Received Response")
     }
-
+    
     func socket(socket : GCDAsyncSocket, didConnectToHost host:String, port p:UInt16)
     {
         println("Connected to \(host) on port \(p).")
@@ -273,11 +275,11 @@ class ScanningViewController: UIViewController, UITableViewDataSource, UITableVi
         NSNotificationCenter.defaultCenter().postNotificationName(portHasBeenFound, object: message)
         socket.disconnect()
     }
-
+    
     func socket(socket: GCDAsyncSocket, shouldTimeoutReadWithTag tag:UInt16){
         println("timeout")
     }
-
+    
     func socket(socket: GCDAsyncSocket, shouldTimeoutWriteWithTag tag:UInt16){
         println("timeout")
     }
